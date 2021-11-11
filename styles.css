@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 32px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bg {
+    position: absolute;
+    color: rgb(172, 172, 172);
+    height: 12rem;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.true-self {
+    position: relative;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: rgb(224, 224, 224);
+}
+
+.true-words {
+    overflow-wrap: break-word;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+    /* background: pink; */
+    margin-top: auto;
+    height: 80vh;
+    width: 80vw;
+}
+
+.truth {
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 5s;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+/*===Truth Button===*/
+
+.truth-button {
+    border-style: hidden;
+    border-radius: 50%;
+    padding: 0.2rem;
+    background-color: #5bb980;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -320%);
+}
+
+.truth-button:hover {
+    border-bottom: 1px solid #40865b;
+    box-shadow: 0 2px #40865b;
+}
+
+.truth-button img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*===Truth Input===*/
+
+.truth-input {
+    font-size: 0.5rem;
+    border-style: hidden;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -100%);
+    padding: 0.5rem 0.7rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(110, 110, 110);
+    opacity: 0.5;
+}
+
+.truth-input::placeholder {
+    color: rgb(150, 150, 150);
+}
+
+.truth-input:focus {
+    opacity: 1;
+}
+
+@media (max-width: 400px) {
+    .truth {
+        font-size: 25px;
+    }
+}
