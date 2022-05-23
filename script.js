@@ -3,7 +3,6 @@ const socket = io('ws://localhost:3000');
 const trueWords = document.getElementById('true-words');
 const truthButton = document.getElementById('truth-button');
 const truthInput = document.getElementById('truth-input');
-// const words = ['test', 'test 1', 'test 2', 'test 3'];
 
 socket.on('truth', async (truth) => {
     let pTag = document.createElement('p');
@@ -54,7 +53,6 @@ function addTruthToDOM(pTag, truth) {
 
     trueWords.offsetWidth; //JS magic
 
-    pTag.classList.add('visible');
     pTag.innerText = truth;
 
     pTag.style.left = `${randomPositionX}px`;
@@ -74,28 +72,6 @@ function cleanInput() {
     truthButton.classList.add('hidden');
 }
 
-// async function main() {
-//   for (let truth of words) {
-//     let pTag = document.createElement('p');
-//     let randomPositionX = randomBetween(0, wordsDiv.offsetWidth);
-//     let randomPositionY = randomBetween(0, wordsDiv.offsetHeight);
-
-//     wordsDiv.append(pTag);
-
-//     pTag.classList.add('truth');
-
-//     wordsDiv.offsetWidth; //JS magic
-
-//     pTag.classList.add('visible');
-//     pTag.innerText = truth;
-
-//     pTag.style.left = `${randomPositionX - (randomPositionX > 100 ? pTag.offsetWidth : 0)}px`;
-//     pTag.style.top = `${randomPositionY - (randomPositionY > 100 ? pTag.offsetHeight : 0)}px`;
-
-//     await delay(3000);
-//   }
-// }
-
 async function handleHTTP(url, options = {}) {
     try {
         const res = await fetch(url, options);
@@ -112,15 +88,3 @@ async function handleHTTP(url, options = {}) {
         console.log(err);
     }
 }
-
-async function main() {
-    await handleHTTP('http://localhost:3000/truth-message/617052f589e3168b8d942eb8');
-
-    // for (let i = 0; i < 1000; i++) {
-    //     let pTag = document.createElement('p');
-
-    //     addTruthToDOM(pTag, 'Test ' + i); //Step 1
-    // }
-}
-
-main();
