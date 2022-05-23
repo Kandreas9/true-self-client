@@ -16,7 +16,7 @@ truthButton.addEventListener('click', (e) => {
     const data = { message: truthInput.value };
 
     socket.emit('truth', data.message); //Socket
-    handleHTTP('http://localhost:3000/truth-message', {
+    handleHTTP('https://true-self-server.herokuapp.com/truth-message', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
